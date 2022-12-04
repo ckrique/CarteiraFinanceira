@@ -28,7 +28,7 @@ namespace CarteiraFinanceira.Controllers
 
         [HttpPost]        
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [Route("ReceberCompraDeMoeda")]        
+        [Route("ColocarDinheiro")]        
         public ActionResult ColocarDinheiro([FromBody] MovimentacaoFinanceiraDTO movimentacaoFinanceiraDTO)
         {
             if (movimentacaoFinanceiraDTO.valor <= 0)
@@ -56,7 +56,7 @@ namespace CarteiraFinanceira.Controllers
 
         [HttpPost]        
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [Route("RealizarVendaDeMoeda")]
+        [Route("RetirarDinheiro")]
         public ActionResult<MovimentacaoFinanceira> RetirarDinheiro([FromBody] MovimentacaoFinanceiraDTO movimentacaoFinanceiraDTO)
         {
             if (movimentacaoFinanceiraDTO.valor <= 0)
