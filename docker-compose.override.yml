@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  carteirafinanceiradb:
+    container_name: carteirafinanceiradb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+        - mongo_data:/data/db
+
+  carteirafinanceira:
+    container_name: CarteiraFinanceira
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "DatabaseSettings:ConnectionString=mongodb://carteirafinanceiradb:27017"
+    depends_on:
+      - carteirafinanceiradb
+    ports:
+      - "8000:80"

@@ -96,8 +96,7 @@ namespace CarteiraFinanceira.Controllers
             SaldoDTO saldoDTO = new SaldoDTO();
             saldoDTO.valor = saldo.valor;                        
 
-            return Ok(saldoDTO.GetDescricaoDoSaldo());
+            return Ok(saldoDTO.valor);
         }
-
     }
 }
